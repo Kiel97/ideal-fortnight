@@ -40,7 +40,6 @@ margin_bottom = 14.0
 text = "111 (25)"
 
 [node name="Player1Turn" type="ColorRect" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-visible = false
 margin_left = 56.0
 margin_right = 70.0
 margin_bottom = 14.0
@@ -48,13 +47,12 @@ rect_min_size = Vector2( 14, 14 )
 color = Color( 1, 0, 0, 1 )
 
 [node name="Space" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-margin_left = 56.0
-margin_right = 186.0
+margin_left = 74.0
+margin_right = 168.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 
 [node name="Player2Turn" type="ColorRect" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-visible = false
 margin_left = 172.0
 margin_right = 186.0
 margin_bottom = 14.0
@@ -70,24 +68,27 @@ text = "222 (22)"
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 margin_top = 50.0
 margin_right = 256.0
-margin_bottom = 96.0
+margin_bottom = 322.0
+size_flags_vertical = 3
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_right = 126.0
-margin_bottom = 46.0
+margin_bottom = 272.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer"]
 margin_left = 7.0
-margin_top = 7.0
+margin_top = 120.0
 margin_right = 119.0
-margin_bottom = 39.0
+margin_bottom = 152.0
+size_flags_vertical = 4
 
 [node name="Player1RemainingLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 margin_right = 112.0
 margin_bottom = 14.0
 text = "501"
 align = 1
+valign = 1
 
 [node name="Player1Target" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
 margin_top = 18.0
@@ -95,24 +96,27 @@ margin_right = 112.0
 margin_bottom = 32.0
 text = "0"
 align = 1
+valign = 1
 
 [node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 margin_left = 130.0
 margin_right = 256.0
-margin_bottom = 46.0
+margin_bottom = 272.0
 size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2"]
 margin_left = 7.0
-margin_top = 7.0
+margin_top = 120.0
 margin_right = 119.0
-margin_bottom = 39.0
+margin_bottom = 152.0
+size_flags_vertical = 4
 
 [node name="Player2RemainingLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
 margin_right = 112.0
 margin_bottom = 14.0
 text = "501"
 align = 1
+valign = 1
 
 [node name="Player2Target" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
 margin_top = 18.0
@@ -120,3 +124,200 @@ margin_right = 112.0
 margin_bottom = 32.0
 text = "0"
 align = 1
+valign = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 256.0
+margin_bottom = 526.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer2"]
+editor/display_folded = true
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 249.0
+margin_bottom = 193.0
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
+margin_right = 242.0
+margin_bottom = 28.0
+
+[node name="InsertedValueLabel" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 235.0
+margin_bottom = 21.0
+align = 1
+
+[node name="Keypad" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
+margin_left = 44.0
+margin_top = 32.0
+margin_right = 198.0
+margin_bottom = 186.0
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 147.0
+margin_bottom = 147.0
+size_flags_horizontal = 4
+columns = 4
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "7"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "8"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "9"
+
+[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "B"
+
+[node name="Button5" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_top = 36.0
+margin_right = 32.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+text = "4"
+
+[node name="Button6" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 36.0
+margin_top = 36.0
+margin_right = 68.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+text = "5"
+
+[node name="Button7" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 72.0
+margin_top = 36.0
+margin_right = 104.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+text = "6"
+
+[node name="Button8" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 108.0
+margin_top = 36.0
+margin_right = 140.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+text = "U"
+
+[node name="Button9" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_top = 72.0
+margin_right = 32.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 32, 32 )
+text = "1"
+
+[node name="Button10" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 36.0
+margin_top = 72.0
+margin_right = 68.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 32, 32 )
+text = "2"
+
+[node name="Button11" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 72.0
+margin_top = 72.0
+margin_right = 104.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 32, 32 )
+text = "3"
+
+[node name="Button12" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 108.0
+margin_top = 72.0
+margin_right = 140.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 32, 32 )
+text = "OK"
+
+[node name="Button13" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_top = 108.0
+margin_right = 32.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 32, 32 )
+text = "N"
+
+[node name="Button14" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer2/VBoxContainer/Keypad/GridContainer"]
+margin_left = 36.0
+margin_top = 108.0
+margin_right = 68.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 32, 32 )
+text = "0"
+
+[node name="PanelContainer3" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+visible = false
+margin_top = 366.0
+margin_right = 256.0
+margin_bottom = 526.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer3"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 249.0
+margin_bottom = 153.0
+
+[node name="Keypad" type="PanelContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
+margin_left = 48.0
+margin_right = 194.0
+margin_bottom = 146.0
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/Keypad"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 139.0
+margin_bottom = 139.0
+size_flags_horizontal = 4
+columns = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/Keypad/GridContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "X"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/Keypad/GridContainer"]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+text = "1"
+
+[node name="Button3" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/Keypad/GridContainer"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+text = "2"
+
+[node name="Button4" type="Button" parent="PanelContainer/VBoxContainer/PanelContainer3/VBoxContainer/Keypad/GridContainer"]
+margin_left = 68.0
+margin_top = 68.0
+margin_right = 132.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+text = "3"
