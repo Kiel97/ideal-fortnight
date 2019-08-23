@@ -19,6 +19,10 @@ config/name="LoopInOut"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+G="*res://Global.gd"
+
 [display]
 
 window/size/width=270
