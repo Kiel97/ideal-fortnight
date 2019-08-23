@@ -1,0 +1,122 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 263.0
+margin_bottom = 533.0
+
+[node name="Header" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 14.0
+text = "Loop-in-out"
+align = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 256.0
+margin_bottom = 46.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 249.0
+margin_bottom = 21.0
+
+[node name="Player1Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+margin_right = 52.0
+margin_bottom = 14.0
+text = "111 (25)"
+
+[node name="Player1Turn" type="ColorRect" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+visible = false
+margin_left = 56.0
+margin_right = 70.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Space" type="Control" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 56.0
+margin_right = 186.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+
+[node name="Player2Turn" type="ColorRect" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+visible = false
+margin_left = 172.0
+margin_right = 186.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+color = Color( 1, 0, 0, 1 )
+
+[node name="Player2Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
+margin_left = 190.0
+margin_right = 242.0
+margin_bottom = 14.0
+text = "222 (22)"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+margin_top = 50.0
+margin_right = 256.0
+margin_bottom = 96.0
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_right = 126.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 119.0
+margin_bottom = 39.0
+
+[node name="Player1RemainingLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 14.0
+text = "501"
+align = 1
+
+[node name="Player1Target" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 112.0
+margin_bottom = 32.0
+text = "0"
+align = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 130.0
+margin_right = 256.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 119.0
+margin_bottom = 39.0
+
+[node name="Player2RemainingLabel" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
+margin_right = 112.0
+margin_bottom = 14.0
+text = "501"
+align = 1
+
+[node name="Player2Target" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer"]
+margin_top = 18.0
+margin_right = 112.0
+margin_bottom = 32.0
+text = "0"
+align = 1
