@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 263.0
+margin_right = 263.0
+margin_bottom = 277.0
+text = "Hello World!"
+align = 1
+valign = 1
