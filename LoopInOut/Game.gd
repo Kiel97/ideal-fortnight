@@ -9,15 +9,18 @@ var player2_target : int = 0
 
 var player_turn : int = 1
 
-onready var player1_name_label : Label = $PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Player1Label
-onready var player1_remaining_label : Label = $PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Player1RemainingLabel
-onready var player1_target_label : Label = $PanelContainer/VBoxContainer/HBoxContainer/PanelContainer/VBoxContainer/Player1Target
-onready var player1_turn : ColorRect = $PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Player1Turn
+onready var player1_name_label : Label = $PanelContainer/VBoxContainer/PlayersHeader/HBoxContainer/Player1Label
+onready var player1_remaining_label : Label = $PanelContainer/VBoxContainer/ScoreBoards/Player1Score/VBoxContainer/Player1RemainingLabel
+onready var player1_target_label : Label = $PanelContainer/VBoxContainer/ScoreBoards/Player1Score/VBoxContainer/Player1Target
+onready var player1_turn : ColorRect = $PanelContainer/VBoxContainer/PlayersHeader/HBoxContainer/Player1Turn
 
-onready var player2_name_label : Label = $PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Player2Label
-onready var player2_remaining_label : Label = $PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer/Player2RemainingLabel
-onready var player2_target_label : Label = $PanelContainer/VBoxContainer/HBoxContainer/PanelContainer2/VBoxContainer/Player2Target
-onready var player2_turn : ColorRect = $PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/Player2Turn
+onready var player2_name_label : Label = $PanelContainer/VBoxContainer/PlayersHeader/HBoxContainer/Player2Label
+onready var player2_remaining_label : Label = $PanelContainer/VBoxContainer/ScoreBoards/Player2Score/VBoxContainer/Player2RemainingLabel
+onready var player2_target_label : Label = $PanelContainer/VBoxContainer/ScoreBoards/Player2Score/VBoxContainer/Player2Target
+onready var player2_turn : ColorRect = $PanelContainer/VBoxContainer/PlayersHeader/HBoxContainer/Player2Turn
+
+onready var target_panel : PanelContainer = $PanelContainer/VBoxContainer/TargetPanel
+onready var conquer_panel : PanelContainer = $PanelContainer/VBoxContainer/ConquerPanel
 
 onready var player1_remaining : int = G.get_target()
 onready var player1_name : String = G.get_player1_name()
@@ -37,3 +40,6 @@ func _ready() -> void:
 	
 	player1_turn.visible = true
 	player2_turn.visible = false
+	
+	target_panel.visible = true
+	conquer_panel.visible = false
