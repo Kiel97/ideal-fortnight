@@ -88,6 +88,7 @@ custom_constants/separation = 10
 margin_right = 256.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
+disabled = true
 text = "Start"
 
 [node name="RulesButton" type="Button" parent="PanelContainer/VBoxContainer/Body/Buttons"]
@@ -110,5 +111,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -14.0
 text = "Dart Bialystok poleca!"
+[connection signal="text_changed" from="PanelContainer/VBoxContainer/Body/Players Grid/Player1TextEdit" to="." method="_on_Player1TextEdit_text_changed"]
+[connection signal="text_changed" from="PanelContainer/VBoxContainer/Body/Players Grid/Player2TextEdit" to="." method="_on_Player2TextEdit_text_changed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Body/Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Body/Buttons/RulesButton" to="." method="_on_RulesButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Body/Buttons/DefaultButton" to="." method="_on_DefaultButton_pressed"]
