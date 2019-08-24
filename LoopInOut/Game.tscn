@@ -330,6 +330,7 @@ margin_right = 132.0
 margin_bottom = 132.0
 rect_min_size = Vector2( 64, 64 )
 text = "3"
+[connection signal="entered_value" from="PanelContainer/VBoxContainer/TargetPanel" to="." method="_on_TargetPanel_entered_value"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/SevenButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_SevenButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/EightButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_EightButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/NineButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_NineButton_pressed"]

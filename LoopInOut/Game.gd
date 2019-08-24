@@ -74,3 +74,14 @@ func set_player_turn(value : int) -> void:
 			conquer_panel.visible = true
 			player2_target_label.set("custom_colors/font_color", active_color)
 			player2_remaining_label.set("custom_colors/font_color", inactive_color)
+	player_turn = value
+
+func next_player() -> void:
+	if self.player_turn == player_turns.PLAYER1:
+		self.player_turn = player_turns.PLAYER2
+	else:
+		self.player_turn = player_turns.PLAYER1
+
+func _on_TargetPanel_entered_value(value) -> void:
+	# Implement dis
+	next_player()
