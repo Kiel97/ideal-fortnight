@@ -31,10 +31,7 @@ onready var target_panel : PanelContainer = $PanelContainer/VBoxContainer/Target
 onready var conquer_panel : PanelContainer = $PanelContainer/VBoxContainer/ConquerPanel
 
 onready var player1_remaining : int = G.get_target()
-onready var player1_name : String = G.get_player1_name()
-
 onready var player2_remaining : int = G.get_target()
-onready var player2_name : String = G.get_player2_name()
 
 func _ready() -> void:
 	self.player_turn = player_turns.PLAYER1
@@ -84,11 +81,11 @@ func next_player() -> void:
 
 func set_player1_darts(value: int) -> void:
 	player1_darts = value
-	player1_name_label.text = NAME_DARTS % [player1_name, player1_darts]
+	player1_name_label.text = NAME_DARTS % [G.get_player1_name(), player1_darts]
 
 func set_player2_darts(value: int) -> void:
 	player2_darts = value
-	player2_name_label.text = NAME_DARTS % [player2_name, player2_darts]
+	player2_name_label.text = NAME_DARTS % [G.get_player2_name(), player2_darts]
 
 func set_player1_target(value: int) -> void:
 	player1_target = value
@@ -101,12 +98,12 @@ func set_player2_target(value: int) -> void:
 func _on_TargetPanel_entered_value(value) -> void:
 	if player_turn == player_turns.PLAYER1:
 		self.player1_darts += 3
-		if value > 0:
+		if value > 0 and value <= player1_remaining and value != player1_remaining - 1:
 			self.player1_target = value
 			player1_gamestate = game_states.CONQUER
 	else:
 		self.player2_darts += 3
-		if value > 0:
+		if value > 0 and value <= player2_remaining and value != player2_remaining - 1:
 			self.player2_target = value
 			player2_gamestate = game_states.CONQUER
 	next_player()
