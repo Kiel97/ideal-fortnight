@@ -8,10 +8,10 @@ const NAME_DARTS : String = "%s (%d)"
 enum game_states {TARGET, CONQUER}
 enum player_turns {PLAYER1, PLAYER2}
 
-var player1_darts : int = 0
-var player1_target : int = 0
-var player2_darts : int = 0
-var player2_target : int = 0
+var player1_darts : int = 0 setget set_player1_darts
+var player1_target : int = 0 setget set_player1_target
+var player2_darts : int = 0 setget set_player2_darts
+var player2_target : int = 0 setget set_player2_target
 
 var player_turn : int = player_turns.PLAYER1 setget set_player_turn
 var player1_gamestate : int = game_states.TARGET
@@ -39,14 +39,14 @@ onready var player2_name : String = G.get_player2_name()
 func _ready() -> void:
 	self.player_turn = player_turns.PLAYER1
 	
-	player1_name_label.text = NAME_DARTS % [player1_name, player1_darts]
-	player2_name_label.text = NAME_DARTS % [player2_name, player2_darts]
+	self.player1_darts = 0
+	self.player2_darts = 0
+	
+	self.player1_target = 0
+	self.player2_target = 0
 	
 	player1_remaining_label.text = str(player1_remaining)
 	player2_remaining_label.text = str(player2_remaining)
-	
-	player1_target_label.text = str(player1_target)
-	player2_target_label.text = str(player2_target)
 
 func set_player_turn(value : int) -> void:
 	player1_turn.visible = not value
@@ -82,6 +82,27 @@ func next_player() -> void:
 	else:
 		self.player_turn = player_turns.PLAYER1
 
+func set_player1_darts(value: int) -> void:
+	player1_darts = value
+	player1_name_label.text = NAME_DARTS % [player1_name, player1_darts]
+
+func set_player2_darts(value: int) -> void:
+	player2_darts = value
+	player2_name_label.text = NAME_DARTS % [player2_name, player2_darts]
+
+func set_player1_target(value: int) -> void:
+	player1_target = value
+	player1_target_label.text = str(player1_target)
+
+func set_player2_target(value: int) -> void:
+	player2_target = value
+	player2_target_label.text = str(player2_target)
+
 func _on_TargetPanel_entered_value(value) -> void:
-	# Implement dis
+	if player_turn == player_turns.PLAYER1:
+		self.player1_darts += 3
+		self.player1_target = value
+	else:
+		self.player2_darts += 3
+		self.player2_target = value
 	next_player()
