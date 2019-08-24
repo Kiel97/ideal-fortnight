@@ -62,7 +62,7 @@ func _on_OKButton_pressed() -> void:
 	if keyboard_value.empty():
 		emit_signal("entered_value", 0)
 	else:
-		if int(keyboard_value) <= 170:
+		if int(keyboard_value) <= 170 and int(keyboard_value) != 1:
 			emit_signal("entered_value", int(keyboard_value))
 	clear_label()
 
