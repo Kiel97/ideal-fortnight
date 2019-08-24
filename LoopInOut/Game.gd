@@ -1,5 +1,8 @@
 extends Control
 
+export var active_color := Color("ffffff")
+export var inactive_color := Color("888888")
+
 const NAME_DARTS : String = "%s (%d)"
 
 enum game_states {TARGET, CONQUER}
@@ -53,13 +56,21 @@ func set_player_turn(value : int) -> void:
 		if player1_gamestate == game_states.TARGET:
 			conquer_panel.visible = false
 			target_panel.visible = true
+			player1_target_label.set("custom_colors/font_color", inactive_color)
+			player1_remaining_label.set("custom_colors/font_color", active_color)
 		else:
 			target_panel.visible = false
 			conquer_panel.visible = true
+			player1_target_label.set("custom_colors/font_color", active_color)
+			player1_remaining_label.set("custom_colors/font_color", inactive_color)
 	else:
 		if player2_gamestate == game_states.TARGET:
 			conquer_panel.visible = false
 			target_panel.visible = true
+			player2_target_label.set("custom_colors/font_color", inactive_color)
+			player2_remaining_label.set("custom_colors/font_color", active_color)
 		else:
 			target_panel.visible = false
 			conquer_panel.visible = true
+			player2_target_label.set("custom_colors/font_color", active_color)
+			player2_remaining_label.set("custom_colors/font_color", inactive_color)
