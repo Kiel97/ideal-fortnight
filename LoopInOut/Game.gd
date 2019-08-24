@@ -107,3 +107,13 @@ func _on_TargetPanel_entered_value(value) -> void:
 			self.player2_target = value
 			player2_gamestate = game_states.CONQUER
 	next_player()
+
+func _on_ConquerPanel_darts_to_checkout(darts) -> void:
+	if darts == 0:
+		if player_turn == player_turns.PLAYER1:
+			self.player1_darts += 3
+		else:
+			self.player2_darts += 3
+		next_player()
+	else:
+		pass

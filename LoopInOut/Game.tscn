@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
 [ext_resource path="res://remaining_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://target_font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://TargetPanel.gd" type="Script" id=4]
+[ext_resource path="res://ConquerPanel.gd" type="Script" id=5]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -282,6 +283,7 @@ visible = false
 margin_top = 366.0
 margin_right = 256.0
 margin_bottom = 526.0
+script = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ConquerPanel"]
 margin_left = 7.0
@@ -345,3 +347,8 @@ text = "3"
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/OKButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_OKButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/NoScoreButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_NoScoreButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/ZeroButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_ZeroButton_pressed"]
+[connection signal="darts_to_checkout" from="PanelContainer/VBoxContainer/ConquerPanel" to="." method="_on_ConquerPanel_darts_to_checkout"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ConquerPanel/VBoxContainer/Keypad/GridContainer/NoScoreButton" to="PanelContainer/VBoxContainer/ConquerPanel" method="_on_NoScoreButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ConquerPanel/VBoxContainer/Keypad/GridContainer/OneDartButton" to="PanelContainer/VBoxContainer/ConquerPanel" method="_on_OneDartButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ConquerPanel/VBoxContainer/Keypad/GridContainer/TwoDartsButton" to="PanelContainer/VBoxContainer/ConquerPanel" method="_on_TwoDartsButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ConquerPanel/VBoxContainer/Keypad/GridContainer/ThreeDartsButton" to="PanelContainer/VBoxContainer/ConquerPanel" method="_on_ThreeDartsButton_pressed"]
