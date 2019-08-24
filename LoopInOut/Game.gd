@@ -101,8 +101,12 @@ func set_player2_target(value: int) -> void:
 func _on_TargetPanel_entered_value(value) -> void:
 	if player_turn == player_turns.PLAYER1:
 		self.player1_darts += 3
-		self.player1_target = value
+		if value > 0:
+			self.player1_target = value
+			player1_gamestate = game_states.CONQUER
 	else:
 		self.player2_darts += 3
-		self.player2_target = value
+		if value > 0:
+			self.player2_target = value
+			player2_gamestate = game_states.CONQUER
 	next_player()
