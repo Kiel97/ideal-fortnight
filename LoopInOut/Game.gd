@@ -123,4 +123,22 @@ func _on_ConquerPanel_darts_to_checkout(darts) -> void:
 			self.player2_darts += 3
 		next_player()
 	else:
-		pass
+		if player_turn == player_turns.PLAYER1:
+			if can_checkout(darts, self.player1_target):
+				self.player1_darts += darts
+				self.player1_remaining -= self.player1_target
+				self.player1_target = 0
+				player1_gamestate = game_states.TARGET
+				next_player()
+		else:
+			if can_checkout(darts, self.player2_target):
+				self.player2_darts += darts
+				self.player2_remaining -= self.player2_target
+				self.player2_target = 0
+				player2_gamestate = game_states.TARGET
+				next_player()
+
+func can_checkout(darts, score) -> bool:
+	return ((darts == 1 and (score <= 40 or score == 50)) or\
+			(darts == 2 and (score < 99 or score in [100, 101, 104, 107, 110])) or\
+			(darts == 3))
