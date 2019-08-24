@@ -284,9 +284,9 @@ text = "0"
 [node name="ConquerPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
 editor/display_folded = true
 visible = false
-margin_top = 366.0
+margin_top = 438.0
 margin_right = 256.0
-margin_bottom = 526.0
+margin_bottom = 598.0
 script = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ConquerPanel"]
