@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://remaining_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://target_font.tres" type="DynamicFont" id=3]
 
 [node name="Game" type="Control"]
 anchor_right = 1.0
@@ -78,22 +80,24 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScoreBoards/Player1Score"]
 margin_left = 7.0
-margin_top = 120.0
+margin_top = 73.0
 margin_right = 119.0
-margin_bottom = 152.0
+margin_bottom = 199.0
 size_flags_vertical = 4
 
 [node name="Player1RemainingLabel" type="Label" parent="PanelContainer/VBoxContainer/ScoreBoards/Player1Score/VBoxContainer"]
 margin_right = 112.0
-margin_bottom = 14.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 2 )
 text = "501"
 align = 1
 valign = 1
 
 [node name="Player1Target" type="Label" parent="PanelContainer/VBoxContainer/ScoreBoards/Player1Score/VBoxContainer"]
-margin_top = 18.0
+margin_top = 71.0
 margin_right = 112.0
-margin_bottom = 32.0
+margin_bottom = 126.0
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 align = 1
 valign = 1
@@ -106,22 +110,24 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ScoreBoards/Player2Score"]
 margin_left = 7.0
-margin_top = 120.0
+margin_top = 73.0
 margin_right = 119.0
-margin_bottom = 152.0
+margin_bottom = 199.0
 size_flags_vertical = 4
 
 [node name="Player2RemainingLabel" type="Label" parent="PanelContainer/VBoxContainer/ScoreBoards/Player2Score/VBoxContainer"]
 margin_right = 112.0
-margin_bottom = 14.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 2 )
 text = "501"
 align = 1
 valign = 1
 
 [node name="Player2Target" type="Label" parent="PanelContainer/VBoxContainer/ScoreBoards/Player2Score/VBoxContainer"]
-margin_top = 18.0
+margin_top = 71.0
 margin_right = 112.0
-margin_bottom = 32.0
+margin_bottom = 126.0
+custom_fonts/font = ExtResource( 3 )
 text = "0"
 align = 1
 valign = 1
