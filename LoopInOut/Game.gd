@@ -12,6 +12,8 @@ var player1_darts : int = 0 setget set_player1_darts
 var player1_target : int = 0 setget set_player1_target
 var player2_darts : int = 0 setget set_player2_darts
 var player2_target : int = 0 setget set_player2_target
+var player1_remaining : int setget set_player1_remaining
+var player2_remaining : int setget set_player2_remaining
 
 var player_turn : int = player_turns.PLAYER1 setget set_player_turn
 var player1_gamestate : int = game_states.TARGET
@@ -30,9 +32,6 @@ onready var player2_turn : ColorRect = $PanelContainer/VBoxContainer/PlayersHead
 onready var target_panel : PanelContainer = $PanelContainer/VBoxContainer/TargetPanel
 onready var conquer_panel : PanelContainer = $PanelContainer/VBoxContainer/ConquerPanel
 
-onready var player1_remaining : int = G.get_target()
-onready var player2_remaining : int = G.get_target()
-
 func _ready() -> void:
 	self.player_turn = player_turns.PLAYER1
 	
@@ -42,8 +41,8 @@ func _ready() -> void:
 	self.player1_target = 0
 	self.player2_target = 0
 	
-	player1_remaining_label.text = str(player1_remaining)
-	player2_remaining_label.text = str(player2_remaining)
+	self.player1_remaining = G.get_target()
+	self.player2_remaining = G.get_target()
 
 func set_player_turn(value : int) -> void:
 	player1_turn.visible = not value
@@ -94,6 +93,14 @@ func set_player1_target(value: int) -> void:
 func set_player2_target(value: int) -> void:
 	player2_target = value
 	player2_target_label.text = str(player2_target)
+
+func set_player1_remaining(value: int) -> void:
+	player1_remaining = value
+	player1_remaining_label.text = str(player1_remaining)
+
+func set_player2_remaining(value: int) -> void:
+	player2_remaining = value
+	player2_remaining_label.text = str(player2_remaining)
 
 func _on_TargetPanel_entered_value(value) -> void:
 	if player_turn == player_turns.PLAYER1:
