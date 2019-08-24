@@ -126,6 +126,8 @@ func _on_ConquerPanel_darts_to_checkout(darts) -> void:
 		if player_turn == player_turns.PLAYER1:
 			if can_checkout(darts, self.player1_target):
 				self.player1_darts += darts
+				if self.player1_remaining == self.player1_target:
+					player1_wins()
 				self.player1_remaining -= self.player1_target
 				self.player1_target = 0
 				player1_gamestate = game_states.TARGET
@@ -133,10 +135,22 @@ func _on_ConquerPanel_darts_to_checkout(darts) -> void:
 		else:
 			if can_checkout(darts, self.player2_target):
 				self.player2_darts += darts
+				if self.player2_remaining == self.player2_target:
+					player2_wins()
 				self.player2_remaining -= self.player2_target
 				self.player2_target = 0
 				player2_gamestate = game_states.TARGET
 				next_player()
+
+func player1_wins() -> void:
+	G.set_winner(G.get_player1_name())
+	G.set_darts(self.player1_darts)
+	get_tree().change_scene("res://Win.tscn")
+
+func player2_wins() -> void:
+	G.set_winner(G.get_player2_name())
+	G.set_darts(self.player2_darts)
+	get_tree().change_scene("res://Win.tscn")
 
 func can_checkout(darts, score) -> bool:
 	return ((darts == 1 and (score <= 40 or score == 50)) or\
