@@ -19,6 +19,7 @@ margin_bottom = 533.0
 custom_constants/separation = 10
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
+editor/display_folded = true
 margin_right = 256.0
 margin_bottom = 34.0
 
@@ -36,22 +37,31 @@ text = "<-"
 [node name="RulesHeaderLabel" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer"]
 margin_left = 29.0
 margin_top = 3.0
-margin_right = 100.0
+margin_right = 96.0
 margin_bottom = 17.0
-text = "Zasady gry:"
+text = "Zasady gry"
 
 [node name="RulesRichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
 margin_top = 44.0
 margin_right = 256.0
-margin_bottom = 526.0
+margin_bottom = 502.0
 size_flags_vertical = 3
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies nisi ac lectus mollis viverra. Integer aliquam sagittis tortor, a vehicula risus ultricies eu. Praesent est felis, luctus rhoncus nunc pharetra, maximus volutpat purus. Phasellus condimentum, justo vitae ultricies semper, leo nisl iaculis eros, malesuada semper felis mauris eleifend libero. Nulla et ornare metus. Suspendisse vitae dui ultricies, lacinia sapien sed, elementum nibh. Nam placerat lectus elit, quis placerat diam mollis vel. Vestibulum vulputate vehicula nisl, at euismod dui convallis quis. Pellentesque hendrerit tempus nunc, sed elementum diam mattis vulputate. Quisque vitae euismod neque. Proin ultricies pretium sapien venenatis sagittis. Integer eget massa lectus. Sed ac vulputate tellus.
+text = "Kazdy z graczy zaczyna z ustalona liczba punktow na koncie. Gracze na przemian rzucaja 3 lotkami. Zdobywanie punktow sklada sie z 2 etapow:
 
-Vestibulum in lorem nulla. Vestibulum mattis vehicula lobortis. In vel iaculis nulla. Etiam accumsan varius malesuada. Vivamus maximus pulvinar sem quis viverra. Aenean efficitur lectus velit, sed gravida erat faucibus vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus rutrum diam quis ligula rhoncus pharetra. Vestibulum cursus ante ut facilisis mollis.
+- wyznaczenia sobie celu
+- osiagniecie go
 
-Curabitur et augue ut orci ornare pretium nec eu lorem. In pretium eros ut justo ullamcorper mollis. Etiam nisi ligula, luctus tristique posuere sodales, tristique at erat. Morbi pharetra convallis lectus sed porta. Vestibulum ac risus fermentum, faucibus quam et, consequat lectus. Nunc a mi ornare, pharetra ipsum sed, dapibus nisl. Donec at ultrices nibh, ac egestas ligula. Mauris nisi neque, aliquet eget nunc in, accumsan rhoncus arcu. Fusce elit velit, bibendum ut volutpat at, pretium interdum ex.
+Aby wyznaczyc sobie cel, gracz musi zaczac odliczanie od trafionego pola podwojnego.
 
-Integer elementum maximus dui. Proin quis molestie nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis rhoncus venenatis sapien, ut malesuada tellus posuere eu. Phasellus at velit dui. In tincidunt eleifend quam quis vehicula. In urna eros, tincidunt sed nisi scelerisque, interdum condimentum mi. Ut vel nisi arcu.
+Gdy graczowi uda sie wyznaczyc cel, przechodzi do etapu zdobywania, w ktorym musi wyzerowac wyznaczona w poprzednim etapie wartosc w double out. Ta odejmowana jest od pozostalej ilosci punktow na koncie danego gracza.
 
-Donec vitae metus id metus eleifend pharetra. Donec porta elit non ipsum tempor aliquam. In sem tellus, egestas quis lectus volutpat, commodo condimentum ipsum. Morbi faucibus luctus nibh sit amet dignissim. Nullam eu laoreet ex. Vestibulum ornare nunc vel velit tincidunt, nec ultricies elit posuere. Suspendisse fermentum lacus eget lacus mollis consequat. "
+Gracze naprzemiennie przechodza w stan wyznaczania celu i jego osiagania.
+
+Pierwszej osobie, ktorej uda sie zejsc z wynikiem do zera, wygrywa."
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+margin_top = 512.0
+margin_right = 256.0
+margin_bottom = 526.0
+text = "Dart Bialystok poleca!"
 [connection signal="pressed" from="PanelContainer/VBoxContainer/PanelContainer/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]
