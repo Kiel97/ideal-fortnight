@@ -104,20 +104,22 @@ func set_player2_remaining(value: int) -> void:
 
 func _on_TargetPanel_entered_value(value) -> void:
 	if player_turn == player_turns.PLAYER1:
-		self.player1_darts += 3
 		if value == 0:
+			self.player1_darts += 3
 			next_player()
 		if value > 1 and value <= player1_remaining and value != player1_remaining - 1:
 			self.player1_target = value
 			player1_gamestate = game_states.CONQUER
+			self.player1_darts += 3
 			next_player()
 	else:
-		self.player2_darts += 3
 		if value == 0:
+			self.player2_darts += 3
 			next_player()
 		if value > 1 and value <= player2_remaining and value != player2_remaining - 1:
 			self.player2_target = value
 			player2_gamestate = game_states.CONQUER
+			self.player2_darts += 3
 			next_player()
 
 func _on_ConquerPanel_darts_to_checkout(darts) -> void:
