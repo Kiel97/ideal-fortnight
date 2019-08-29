@@ -4,6 +4,8 @@ onready var player1 = $"PanelContainer/VBoxContainer/Body/Players Grid/Player1Te
 onready var player2 = $"PanelContainer/VBoxContainer/Body/Players Grid/Player2TextEdit"
 onready var start_btn = $"PanelContainer/VBoxContainer/Body/Buttons/StartButton"
 onready var target_cbx = $"PanelContainer/VBoxContainer/Body/Players Grid/TargetOptionButton"
+onready var players_cbx = $"PanelContainer/VBoxContainer/Body/Players Grid/PlayersOption"
+onready var player2_label = $"PanelContainer/VBoxContainer/Body/Players Grid/Player2Label"
 
 func _on_RulesButton_pressed() -> void:
 	get_tree().change_scene("res://Help.tscn")
@@ -24,3 +26,7 @@ func start_game() -> void:
 
 func get_target_value() -> int:
 	return int(target_cbx.get_item_text(target_cbx.get_selected_id()))
+
+func _on_PlayersOption_item_selected(ID: int) -> void:
+	player2.visible = players_cbx.get_item_text(ID) == "2"
+	player2_label.visible = players_cbx.get_item_text(ID) == "2"

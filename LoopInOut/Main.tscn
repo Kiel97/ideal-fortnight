@@ -24,15 +24,15 @@ text = "Loop-in-out"
 align = 1
 
 [node name="Body" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
-margin_top = 128.0
+margin_top = 113.0
 margin_right = 256.0
-margin_bottom = 416.0
+margin_bottom = 431.0
 size_flags_vertical = 6
 custom_constants/separation = 150
 
 [node name="Players Grid" type="GridContainer" parent="PanelContainer/VBoxContainer/Body"]
 margin_right = 256.0
-margin_bottom = 88.0
+margin_bottom = 118.0
 custom_constants/vseparation = 10
 columns = 2
 
@@ -78,10 +78,25 @@ text = "100"
 items = [ "100", null, false, 0, null, "101", null, false, 1, null, "170", null, false, 2, null, "501", null, false, 3, null ]
 selected = 0
 
-[node name="Buttons" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Body"]
-margin_top = 238.0
+[node name="PlayersLabel" type="Label" parent="PanelContainer/VBoxContainer/Body/Players Grid"]
+margin_top = 101.0
+margin_right = 56.0
+margin_bottom = 115.0
+text = "Graczy:"
+
+[node name="PlayersOption" type="OptionButton" parent="PanelContainer/VBoxContainer/Body/Players Grid"]
+margin_left = 60.0
+margin_top = 98.0
 margin_right = 256.0
-margin_bottom = 288.0
+margin_bottom = 118.0
+text = "2"
+items = [ "1", null, false, 0, null, "2", null, false, 1, null ]
+selected = 1
+
+[node name="Buttons" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Body"]
+margin_top = 268.0
+margin_right = 256.0
+margin_bottom = 318.0
 custom_constants/separation = 10
 
 [node name="StartButton" type="Button" parent="PanelContainer/VBoxContainer/Body/Buttons"]
@@ -103,5 +118,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -14.0
 text = "Dart Bialystok poleca!"
+[connection signal="item_selected" from="PanelContainer/VBoxContainer/Body/Players Grid/PlayersOption" to="." method="_on_PlayersOption_item_selected"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Body/Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Body/Buttons/RulesButton" to="." method="_on_RulesButton_pressed"]
