@@ -13,3 +13,6 @@ func _on_TwoDartsButton_pressed() -> void:
 
 func _on_ThreeDartsButton_pressed() -> void:
 	emit_signal("darts_to_checkout", 3)
+
+func _on_UndoButton_pressed() -> void:
+	print("Sorry, not implemented yet!")
