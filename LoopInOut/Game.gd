@@ -160,6 +160,6 @@ func player2_wins() -> void:
 	get_tree().change_scene("res://Win.tscn")
 
 func can_checkout(darts, score) -> bool:
-	return ((darts == 1 and (score <= 40 or score == 50)) or\
+	return ((darts == 1 and score % 2 == 0 and (score <= 40 or score == 50)) or\
 			(darts == 2 and (score < 99 or score in [100, 101, 104, 107, 110])) or\
 			(darts == 3))
