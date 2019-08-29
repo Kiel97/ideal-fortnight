@@ -163,55 +163,54 @@ margin_bottom = 21.0
 align = 1
 
 [node name="Keypad" type="PanelContainer" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer"]
-margin_left = 44.0
+margin_left = 22.0
 margin_top = 32.0
-margin_right = 198.0
+margin_right = 219.0
 margin_bottom = 186.0
 size_flags_horizontal = 4
 
-[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 147.0
+margin_right = 190.0
 margin_bottom = 147.0
-size_flags_horizontal = 4
-columns = 4
+custom_constants/separation = 10
 
-[node name="SevenButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer"]
+editor/display_folded = true
+margin_right = 104.0
+margin_bottom = 140.0
+size_flags_horizontal = 4
+columns = 3
+
+[node name="SevenButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_right = 32.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 text = "7"
 
-[node name="EightButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="EightButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_left = 36.0
 margin_right = 68.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 text = "8"
 
-[node name="NineButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="NineButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 32.0
 rect_min_size = Vector2( 32, 32 )
 text = "9"
 
-[node name="BackspaceButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
-margin_left = 108.0
-margin_right = 140.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
-text = "B"
-
-[node name="FourButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="FourButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_top = 36.0
 margin_right = 32.0
 margin_bottom = 68.0
 rect_min_size = Vector2( 32, 32 )
 text = "4"
 
-[node name="FiveButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="FiveButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_left = 36.0
 margin_top = 36.0
 margin_right = 68.0
@@ -219,7 +218,7 @@ margin_bottom = 68.0
 rect_min_size = Vector2( 32, 32 )
 text = "5"
 
-[node name="SixButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="SixButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_left = 72.0
 margin_top = 36.0
 margin_right = 104.0
@@ -227,22 +226,14 @@ margin_bottom = 68.0
 rect_min_size = Vector2( 32, 32 )
 text = "6"
 
-[node name="UndoButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
-margin_left = 108.0
-margin_top = 36.0
-margin_right = 140.0
-margin_bottom = 68.0
-rect_min_size = Vector2( 32, 32 )
-text = "U"
-
-[node name="OneButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="OneButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_top = 72.0
 margin_right = 32.0
 margin_bottom = 104.0
 rect_min_size = Vector2( 32, 32 )
 text = "1"
 
-[node name="TwoButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="TwoButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_left = 36.0
 margin_top = 72.0
 margin_right = 68.0
@@ -250,7 +241,7 @@ margin_bottom = 104.0
 rect_min_size = Vector2( 32, 32 )
 text = "2"
 
-[node name="ThreeButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="ThreeButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_left = 72.0
 margin_top = 72.0
 margin_right = 104.0
@@ -258,35 +249,50 @@ margin_bottom = 104.0
 rect_min_size = Vector2( 32, 32 )
 text = "3"
 
-[node name="OKButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
-margin_left = 108.0
-margin_top = 72.0
-margin_right = 140.0
-margin_bottom = 104.0
-rect_min_size = Vector2( 32, 32 )
-text = "OK"
-
-[node name="NoScoreButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
+[node name="ZeroButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer"]
 margin_top = 108.0
 margin_right = 32.0
 margin_bottom = 140.0
 rect_min_size = Vector2( 32, 32 )
-text = "N"
-
-[node name="ZeroButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer"]
-margin_left = 36.0
-margin_top = 108.0
-margin_right = 68.0
-margin_bottom = 140.0
-rect_min_size = Vector2( 32, 32 )
 text = "0"
 
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer"]
+margin_left = 114.0
+margin_right = 183.0
+margin_bottom = 140.0
+
+[node name="BackspaceButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer"]
+margin_right = 69.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+text = "Back"
+
+[node name="UndoButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 69.0
+margin_bottom = 68.0
+rect_min_size = Vector2( 32, 32 )
+text = "Undo"
+
+[node name="NoScoreButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 69.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 32, 32 )
+text = "No score"
+
+[node name="OKButton" type="Button" parent="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer"]
+margin_top = 108.0
+margin_right = 69.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 32, 32 )
+text = "OK"
+
 [node name="ConquerPanel" type="PanelContainer" parent="PanelContainer/VBoxContainer"]
-editor/display_folded = true
 visible = false
-margin_top = 438.0
+margin_top = 366.0
 margin_right = 256.0
-margin_bottom = 598.0
+margin_bottom = 526.0
 script = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/ConquerPanel"]
@@ -337,20 +343,20 @@ margin_bottom = 132.0
 rect_min_size = Vector2( 64, 64 )
 text = "3"
 [connection signal="entered_value" from="PanelContainer/VBoxContainer/TargetPanel" to="." method="_on_TargetPanel_entered_value"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/SevenButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_SevenButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/EightButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_EightButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/NineButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_NineButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/BackspaceButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_BackspaceButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/FourButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_FourButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/FiveButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_FiveButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/SixButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_SixButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/UndoButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_UndoButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/OneButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_OneButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/TwoButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_TwoButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/ThreeButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_ThreeButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/OKButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_OKButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/NoScoreButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_NoScoreButton_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/GridContainer/ZeroButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_ZeroButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/SevenButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_SevenButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/EightButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_EightButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/NineButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_NineButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/FourButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_FourButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/FiveButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_FiveButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/SixButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_SixButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/OneButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_OneButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/TwoButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_TwoButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/ThreeButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_ThreeButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/GridContainer/ZeroButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_ZeroButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer/BackspaceButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_BackspaceButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer/UndoButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_UndoButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer/NoScoreButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_NoScoreButton_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/TargetPanel/VBoxContainer/Keypad/HBoxContainer/VBoxContainer/OKButton" to="PanelContainer/VBoxContainer/TargetPanel" method="_on_OKButton_pressed"]
 [connection signal="darts_to_checkout" from="PanelContainer/VBoxContainer/ConquerPanel" to="." method="_on_ConquerPanel_darts_to_checkout"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ConquerPanel/VBoxContainer/Keypad/GridContainer/NoScoreButton" to="PanelContainer/VBoxContainer/ConquerPanel" method="_on_NoScoreButton_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/ConquerPanel/VBoxContainer/Keypad/GridContainer/OneDartButton" to="PanelContainer/VBoxContainer/ConquerPanel" method="_on_OneDartButton_pressed"]
