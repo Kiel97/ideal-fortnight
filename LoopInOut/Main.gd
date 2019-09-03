@@ -2,7 +2,6 @@ extends Control
 
 onready var player1 = $"PanelContainer/VBoxContainer/Body/Players Grid/Player1TextEdit"
 onready var player2 = $"PanelContainer/VBoxContainer/Body/Players Grid/Player2TextEdit"
-onready var start_btn = $"PanelContainer/VBoxContainer/Body/Buttons/StartButton"
 onready var target_cbx = $"PanelContainer/VBoxContainer/Body/Players Grid/TargetOptionButton"
 onready var players_cbx = $"PanelContainer/VBoxContainer/Body/Players Grid/PlayersOption"
 onready var player2_label = $"PanelContainer/VBoxContainer/Body/Players Grid/Player2Label"
