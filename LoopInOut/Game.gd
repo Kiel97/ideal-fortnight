@@ -8,6 +8,8 @@ const NAME_DARTS : String = "%s (%d)"
 enum game_states {TARGET, CONQUER}
 enum player_turns {PLAYER1, PLAYER2}
 
+var last_action : Dictionary = {}
+
 var players : int = 2 setget set_players_playing
 
 var player1_darts : int = 0 setget set_player1_darts
@@ -118,21 +120,23 @@ func _on_TargetPanel_entered_value(value) -> void:
 	if player_turn == player_turns.PLAYER1:
 		if value == 0:
 			self.player1_darts += 3
-			next_player()
-		if value > 1 and value <= player1_remaining and value != player1_remaining - 1:
+		elif value > 1 and value <= player1_remaining and value != player1_remaining - 1:
 			self.player1_target = value
 			player1_gamestate = game_states.CONQUER
 			self.player1_darts += 3
-			next_player()
+		else:
+			return
 	else:
 		if value == 0:
 			self.player2_darts += 3
-			next_player()
-		if value > 1 and value <= player2_remaining and value != player2_remaining - 1:
+		elif value > 1 and value <= player2_remaining and value != player2_remaining - 1:
 			self.player2_target = value
 			player2_gamestate = game_states.CONQUER
 			self.player2_darts += 3
-			next_player()
+		else:
+			return
+	save_last_action(player_turn, game_states.TARGET, value, 3)
+	next_player()
 
 func _on_ConquerPanel_darts_to_checkout(darts) -> void:
 	if darts == 0:
@@ -140,10 +144,12 @@ func _on_ConquerPanel_darts_to_checkout(darts) -> void:
 			self.player1_darts += 3
 		else:
 			self.player2_darts += 3
+		save_last_action(player_turn, game_states.CONQUER)
 		next_player()
 	else:
 		if player_turn == player_turns.PLAYER1:
 			if can_checkout(darts, self.player1_target):
+				save_last_action(player_turn, game_states.CONQUER, self.player1_target, darts)
 				self.player1_darts += darts
 				if self.player1_remaining == self.player1_target:
 					player1_wins()
@@ -153,6 +159,7 @@ func _on_ConquerPanel_darts_to_checkout(darts) -> void:
 				next_player()
 		else:
 			if can_checkout(darts, self.player2_target):
+				save_last_action(player_turn, game_states.CONQUER, self.player2_target, darts)			
 				self.player2_darts += darts
 				if self.player2_remaining == self.player2_target:
 					player2_wins()
@@ -175,3 +182,15 @@ func can_checkout(darts, score) -> bool:
 	return ((darts == 1 and score % 2 == 0 and (score <= 40 or score == 50)) or\
 			(darts == 2 and (score < 99 or score in [100, 101, 104, 107, 110])) or\
 			(darts == 3))
+			
+func _on_UndoButton_pressed() -> void:
+	undo_last_action()
+
+func save_last_action(player: int, type: int, value:int=0, darts:int=3) -> void:
+	last_action = {'player': player,
+					'type': type,
+					'value': value,
+					'darts': darts}
+
+func undo_last_action() -> void:
+	print(last_action)

@@ -55,9 +55,6 @@ func _on_BackspaceButton_pressed() -> void:
 	keyboard_value = keyboard_value.substr(0, keyboard_value.length() - 1)
 	update_label()
 
-func _on_UndoButton_pressed() -> void:
-	print("Sorry, not implemented yet!")
-
 func _on_OKButton_pressed() -> void:
 	if keyboard_value.empty():
 		emit_signal("entered_value", 0)
