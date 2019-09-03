@@ -30,6 +30,7 @@ onready var player2_name_label : Label = $PanelContainer/VBoxContainer/PlayersHe
 onready var player2_remaining_label : Label = $PanelContainer/VBoxContainer/ScoreBoards/Player2Score/VBoxContainer/Player2RemainingLabel
 onready var player2_target_label : Label = $PanelContainer/VBoxContainer/ScoreBoards/Player2Score/VBoxContainer/Player2Target
 onready var player2_turn : ColorRect = $PanelContainer/VBoxContainer/PlayersHeader/HBoxContainer/Player2Turn
+onready var player2_scoreboard : PanelContainer = $PanelContainer/VBoxContainer/ScoreBoards/Player2Score
 
 onready var target_panel : PanelContainer = $PanelContainer/VBoxContainer/TargetPanel
 onready var conquer_panel : PanelContainer = $PanelContainer/VBoxContainer/ConquerPanel
@@ -50,10 +51,10 @@ func _ready() -> void:
 
 func set_players_playing(value : int) -> void:
 	players = value
-	if players == 1:
-		player2_name_label.visible = false
-		player2_turn.visible = false
-		$PanelContainer/VBoxContainer/ScoreBoards/Player2Score.visible = false
+	
+	player2_name_label.visible = players == 2
+#	player2_turn.visible = players == 2
+	player2_scoreboard.visible = players == 2
 
 func set_player_turn(value : int) -> void:
 	player1_turn.visible = not value
