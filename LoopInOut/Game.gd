@@ -8,6 +8,8 @@ const NAME_DARTS : String = "%s (%d)"
 enum game_states {TARGET, CONQUER}
 enum player_turns {PLAYER1, PLAYER2}
 
+var players : int = 2 setget set_players_playing
+
 var player1_darts : int = 0 setget set_player1_darts
 var player1_target : int = 0 setget set_player1_target
 var player2_darts : int = 0 setget set_player2_darts
@@ -35,6 +37,8 @@ onready var conquer_panel : PanelContainer = $PanelContainer/VBoxContainer/Conqu
 func _ready() -> void:
 	self.player_turn = player_turns.PLAYER1
 	
+	self.players = G.get_players_playing()
+	
 	self.player1_darts = 0
 	self.player2_darts = 0
 	
@@ -43,6 +47,13 @@ func _ready() -> void:
 	
 	self.player1_remaining = G.get_target()
 	self.player2_remaining = G.get_target()
+
+func set_players_playing(value : int) -> void:
+	players = value
+	if players == 1:
+		player2_name_label.visible = false
+		player2_turn.visible = false
+		$PanelContainer/VBoxContainer/ScoreBoards/Player2Score.visible = false
 
 func set_player_turn(value : int) -> void:
 	player1_turn.visible = not value
@@ -73,7 +84,7 @@ func set_player_turn(value : int) -> void:
 	player_turn = value
 
 func next_player() -> void:
-	if self.player_turn == player_turns.PLAYER1:
+	if self.players == 2 and self.player_turn == player_turns.PLAYER1:
 		self.player_turn = player_turns.PLAYER2
 	else:
 		self.player_turn = player_turns.PLAYER1

@@ -1,5 +1,6 @@
 extends Node
 
+var players : int setget set_players_playing, get_players_playing
 var player1_name : String setget set_player1_name, get_player1_name
 var player2_name : String setget set_player2_name, get_player2_name
 var target : int setget set_target, get_target
@@ -21,6 +22,14 @@ func set_winner(value : String) -> void:
 
 func set_darts(value : int) -> void:
 	darts = value
+
+func set_players_playing(value : int) -> void:
+	if not value in [1, 2]:
+		players = 2
+	players = value
+
+func get_players_playing() -> int:
+	return players
 
 func get_player1_name() -> String:
 	return player1_name

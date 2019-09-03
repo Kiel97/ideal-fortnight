@@ -21,12 +21,16 @@ func start_game() -> void:
 	G.set_player1_name(player1.text)
 	G.set_player2_name(player2.text)
 	G.set_target(get_target_value())
+	G.set_players_playing(get_players_amount())
 	
 	get_tree().change_scene("res://Game.tscn")
 
-func get_target_value() -> int:
-	return int(target_cbx.get_item_text(target_cbx.get_selected_id()))
+func get_target_value(id:int=target_cbx.get_selected_id()) -> int:
+	return int(target_cbx.get_item_text(id))
+
+func get_players_amount(id:int=players_cbx.get_selected_id()) -> int:
+	return int(players_cbx.get_item_text(id))
 
 func _on_PlayersOption_item_selected(ID: int) -> void:
-	player2.visible = players_cbx.get_item_text(ID) == "2"
-	player2_label.visible = players_cbx.get_item_text(ID) == "2"
+	player2.visible = get_players_amount(ID) == 2
+	player2_label.visible = get_players_amount(ID) == 2
