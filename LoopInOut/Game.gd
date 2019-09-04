@@ -184,7 +184,8 @@ func can_checkout(darts, score) -> bool:
 			(darts == 3))
 			
 func _on_UndoButton_pressed() -> void:
-	undo_last_action()
+	if last_action:
+		undo_last_action()
 
 func save_last_action(player: int, type: int, value:int=0, darts:int=3) -> void:
 	last_action = {'player': player,
@@ -193,4 +194,25 @@ func save_last_action(player: int, type: int, value:int=0, darts:int=3) -> void:
 					'darts': darts}
 
 func undo_last_action() -> void:
-	print(last_action)
+	if last_action['player'] == player_turns.PLAYER1:
+		if last_action['value'] != 0:
+			if last_action['type'] == game_states.TARGET:
+				self.player1_target -= last_action['value']
+				self.player1_gamestate = game_states.TARGET
+			else:
+				self.player1_target += last_action['value']
+				self.player1_remaining += last_action['value']
+				self.player1_gamestate = game_states.CONQUER
+		self.player1_darts -= last_action['darts']
+	else:
+		if last_action['value'] != 0:
+			if last_action['type'] == game_states.TARGET:
+				self.player2_target -= last_action['value']
+				self.player2_gamestate = game_states.TARGET
+			else:
+				self.player2_target += last_action['value']
+				self.player2_remaining += last_action['value']
+				self.player2_gamestate = game_states.CONQUER
+		self.player2_darts -= last_action['darts']
+	self.player_turn = last_action['player']
+	last_action = {}
