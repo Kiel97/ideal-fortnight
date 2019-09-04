@@ -4,10 +4,12 @@ export var active_color := Color("ffffff")
 export var inactive_color := Color("888888")
 
 const NAME_DARTS : String = "%s (%d)"
+const MAX_UNDOS : int = 128
 
 enum game_states {TARGET, CONQUER}
 enum player_turns {PLAYER1, PLAYER2}
 
+var actions : Array = []
 var last_action : Dictionary = {}
 
 var players : int = 2 setget set_players_playing
@@ -184,14 +186,19 @@ func can_checkout(darts, score) -> bool:
 			(darts == 3))
 			
 func _on_UndoButton_pressed() -> void:
-	if last_action:
+	if actions:
+		last_action = actions.pop_back()
 		undo_last_action()
 
 func save_last_action(player: int, type: int, value:int=0, darts:int=3) -> void:
-	last_action = {'player': player,
-					'type': type,
-					'value': value,
-					'darts': darts}
+	var action : Dictionary = {'player': player,
+								'type': type,
+								'value': value,
+								'darts': darts}
+	if actions.size() >= MAX_UNDOS:
+		actions.pop_front()
+	
+	actions.push_back(action)
 
 func undo_last_action() -> void:
 	if last_action['player'] == player_turns.PLAYER1:
